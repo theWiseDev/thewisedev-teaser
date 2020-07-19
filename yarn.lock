@@ -5027,6 +5027,13 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+git-commit-msg-linter@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/git-commit-msg-linter/-/git-commit-msg-linter-2.4.4.tgz#fd2b02ec60fe6035c881015c596673594461bac6"
+  integrity sha512-rlhe0EBrzRK7tWxmvz3VRNLZ32oBZhz4VHJrhaeg9mxRPhAaN01m/a8hy36Eph0isL9LhpY9r1rt0tRdP9Uu7Q==
+  dependencies:
+    chalk "^2.4.2"
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
