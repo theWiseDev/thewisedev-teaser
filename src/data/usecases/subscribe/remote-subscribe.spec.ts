@@ -5,6 +5,7 @@ import { HttpPostClientSpy } from '../../test/mock-http-client'
 import { mockSubscribe } from '../../../domain/test/mock-subscribe'
 import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
 import { HttpStatusCode } from '../../protocols/http/http-response'
+import { UnexpectedError } from '../../../domain/errors/unexpected-error'
 
 type SutTypes = {
   sut: RemoteSubscribe
@@ -40,5 +41,32 @@ describe('RemoteSubscribe', () => {
     }
     const promise = sut.subscribe(mockSubscribe())
     await expect(promise).rejects.toThrow(new InvalidCredentialsError())
+  })
+
+  test('Should throw UnexpectedError if HttpPostClient returns 400', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.badRequest,
+    }
+    const promise = sut.subscribe(mockSubscribe())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should throw UnexpectedError if HttpPostClient returns 404', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.notFound,
+    }
+    const promise = sut.subscribe(mockSubscribe())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should throw UnexpectedError if HttpPostClient returns 500', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.serverError,
+    }
+    const promise = sut.subscribe(mockSubscribe())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
   })
 })
