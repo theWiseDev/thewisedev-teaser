@@ -1,16 +1,15 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import faker from 'faker'
 import { RemoteSubscribe } from './remote-subscribe'
-import { HttpPostClientSpy } from '../../test/mock-http-client'
+import { HttpPostClientSpy } from '../../test'
+import { mockSubscribe, mockSubscriberModel } from '../../../domain/test'
 import {
-  mockSubscribe,
-  mockSubscriberModel,
-} from '../../../domain/test/mock-subscribe'
-import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
-import { HttpStatusCode } from '../../protocols/http/http-response'
-import { UnexpectedError } from '../../../domain/errors/unexpected-error'
-import { SubscribeParams } from '../../../domain/usecases/subscribe'
-import { SubscriberModel } from '../../../domain/models/subscriber-model'
+  InvalidCredentialsError,
+  UnexpectedError,
+} from '../../../domain/errors'
+import { HttpStatusCode } from '../../protocols/http'
+import { SubscribeParams } from '../../../domain/usecases'
+import { SubscriberModel } from '../../../domain/models'
 
 type SutTypes = {
   sut: RemoteSubscribe

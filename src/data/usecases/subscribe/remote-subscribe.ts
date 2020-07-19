@@ -1,9 +1,10 @@
-import { HttpPostClient } from '../../protocols/http/http-post-client'
-import { SubscribeParams, Subscribe } from '../../../domain/usecases/subscribe'
-import { HttpStatusCode } from '../../protocols/http/http-response'
-import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
-import { UnexpectedError } from '../../../domain/errors/unexpected-error'
-import { SubscriberModel } from '../../../domain/models/subscriber-model'
+import { HttpPostClient, HttpStatusCode } from '../../protocols/http'
+import { SubscribeParams, Subscribe } from '../../../domain/usecases'
+import {
+  InvalidCredentialsError,
+  UnexpectedError,
+} from '../../../domain/errors'
+import { SubscriberModel } from '../../../domain/models'
 
 /* eslint-disable prettier/prettier */
 export class RemoteSubscribe implements Subscribe {
