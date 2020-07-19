@@ -3,6 +3,8 @@ import faker from 'faker'
 import { RemoteSubscribe } from './remote-subscribe'
 import { HttpPostClientSpy } from '../../test/mock-http-client'
 import { mockSubscribe } from '../../../domain/test/mock-subscribe'
+import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
+import { HttpStatusCode } from '../../protocols/http/http-response'
 
 type SutTypes = {
   sut: RemoteSubscribe
@@ -29,5 +31,14 @@ describe('RemoteSubscribe', () => {
     const subscribeParams = mockSubscribe()
     await sut.subscribe(subscribeParams)
     expect(httpPostClientSpy.body).toEqual(subscribeParams)
+  })
+
+  test('Should throw InvalidCredentialsError if HttpPostClient returns 401', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.unauthorized,
+    }
+    const promise = sut.subscribe(mockSubscribe())
+    await expect(promise).rejects.toThrow(new InvalidCredentialsError())
   })
 })
