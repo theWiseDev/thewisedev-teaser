@@ -7,8 +7,8 @@ export enum HttpStatusCode {
   serverError = 500,
 }
 
-export type HttpResponse = {
+export type HttpResponse<T> = {
   statusCode: HttpStatusCode
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  body?: any
+  body?: T
 }

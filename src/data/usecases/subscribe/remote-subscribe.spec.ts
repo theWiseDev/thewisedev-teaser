@@ -6,14 +6,19 @@ import { mockSubscribe } from '../../../domain/test/mock-subscribe'
 import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
 import { HttpStatusCode } from '../../protocols/http/http-response'
 import { UnexpectedError } from '../../../domain/errors/unexpected-error'
+import { SubscribeParams } from '../../../domain/usecases/subscribe'
+import { SubscriberModel } from '../../../domain/models/subscriber-model'
 
 type SutTypes = {
   sut: RemoteSubscribe
-  httpPostClientSpy: HttpPostClientSpy
+  httpPostClientSpy: HttpPostClientSpy<SubscribeParams, SubscriberModel>
 }
 
 const makeSut = (url = faker.internet.url()): SutTypes => {
-  const httpPostClientSpy = new HttpPostClientSpy()
+  const httpPostClientSpy = new HttpPostClientSpy<
+    SubscribeParams,
+    SubscriberModel
+  >()
   const sut = new RemoteSubscribe(url, httpPostClientSpy)
 
   return { sut, httpPostClientSpy }
