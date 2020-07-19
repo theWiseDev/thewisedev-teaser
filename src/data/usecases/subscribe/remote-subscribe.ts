@@ -2,6 +2,7 @@ import { HttpPostClient } from '../../protocols/http/http-post-client'
 import { SubscribeParams } from '../../../domain/usecases/subscribe'
 import { HttpStatusCode } from '../../protocols/http/http-response'
 import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
+import { UnexpectedError } from '../../../domain/errors/unexpected-error'
 
 /* eslint-disable prettier/prettier */
 export class RemoteSubscribe {
@@ -10,11 +11,13 @@ export class RemoteSubscribe {
     private readonly httpPostClient: HttpPostClient,
   ) { }
 
+  // eslint-disable-next-line consistent-return
   async subscribe(params: SubscribeParams): Promise<void> {
     const httpResponse = await this.httpPostClient.post({ url: this.url, body: params })
     switch (httpResponse.statusCode) {
+      case HttpStatusCode.ok: break
       case HttpStatusCode.unauthorized: throw new InvalidCredentialsError()
-      default: return Promise.resolve()
+      default: throw new UnexpectedError()
     }
   }
 }
