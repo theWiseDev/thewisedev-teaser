@@ -2,7 +2,10 @@
 import faker from 'faker'
 import { RemoteSubscribe } from './remote-subscribe'
 import { HttpPostClientSpy } from '../../test/mock-http-client'
-import { mockSubscribe } from '../../../domain/test/mock-subscribe'
+import {
+  mockSubscribe,
+  mockSubscriberModel,
+} from '../../../domain/test/mock-subscribe'
 import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials-error'
 import { HttpStatusCode } from '../../protocols/http/http-response'
 import { UnexpectedError } from '../../../domain/errors/unexpected-error'
@@ -73,5 +76,16 @@ describe('RemoteSubscribe', () => {
     }
     const promise = sut.subscribe(mockSubscribe())
     await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should return an AccountModel if HttpPostClient returns 200', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    const httpResult = mockSubscriberModel()
+    httpPostClientSpy.response = {
+      statusCode: HttpStatusCode.ok,
+      body: httpResult,
+    }
+    const subscriber = await sut.subscribe(mockSubscribe())
+    await expect(subscriber).toEqual(httpResult)
   })
 })
