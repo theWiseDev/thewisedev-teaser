@@ -1,3 +1,4 @@
+import faker from 'faker'
 import { RemoteSubscribe } from './remote-subscribe'
 import { HttpPostClientSpy } from '../../test/mock-http-client'
 
@@ -6,7 +7,7 @@ type SutTypes = {
   httpPostClientSpy: HttpPostClientSpy
 }
 
-const makeSut = (url = 'any_url'): SutTypes => {
+const makeSut = (url = faker.internet.url()): SutTypes => {
   const httpPostClientSpy = new HttpPostClientSpy()
   const sut = new RemoteSubscribe(url, httpPostClientSpy)
 
@@ -15,7 +16,7 @@ const makeSut = (url = 'any_url'): SutTypes => {
 
 describe('RemoteSubscribe', () => {
   test('Should call HttpPost client with correct URL', async () => {
-    const url = 'other_url'
+    const url = faker.internet.url()
     const { sut, httpPostClientSpy } = makeSut(url)
     await sut.subscribe()
     expect(httpPostClientSpy.url).toBe(url)
