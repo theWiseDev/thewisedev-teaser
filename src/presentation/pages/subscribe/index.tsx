@@ -2,7 +2,7 @@ import React from 'react';
 import Styles from './subscribe-styles.scss'
 import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
-import Input from '@/presentation/components/input'
+import { Input } from '@/presentation/components'
 
 const Login: React.FC = () => {
   return (
