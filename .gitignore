@@ -1,10 +1,6 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
+node_modules
+coverage
+public/js
 
 # production
 /build

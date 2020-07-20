@@ -1,5 +1,5 @@
 **/*.js
 node_modules
 build
-/src/react-app-env.d.ts
+public
 coverage
