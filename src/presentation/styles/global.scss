@@ -1,0 +1,18 @@
+@import "./variables.scss";
+
+*{
+  font-family: $font;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+
+body{
+  font-size: 16px;
+  background-color: $darkBlue;
+
+  @media screen and (max-width: #{$screen-xs}px){
+    font-size: 14px;
+  }
+}
