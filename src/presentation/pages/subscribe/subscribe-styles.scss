@@ -1,11 +1,7 @@
-$darkBlue: #1A1F33;
-$lightBlue: #2FD7E7;
-$white: #EDEEF1;
-$bold: 900;
-
+@import "../../styles/variables.scss";
 
 *{
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $font;
   font-size: 16px;
   padding: 0;
   margin: 0;
@@ -20,19 +16,6 @@ body{
 .container{
   width: 80vw;
   margin-left: 10vw;
-}
-
-input[type="text"],
-input[type="email"]{
-  padding: 8px 15px;
-  border-radius: 5px;
-  border: 0;
-  color: $darkBlue;
-  width: 100%;
-
-  &:focus{
-    outline: none;
-  }
 }
 
 @keyframes spin {
@@ -151,7 +134,7 @@ input[type="email"]{
     margin-bottom: 20px;
 
 
-    .inputWrapper{
+    > *{
       width: calc(60% - 15px);
 
       &:first-child{

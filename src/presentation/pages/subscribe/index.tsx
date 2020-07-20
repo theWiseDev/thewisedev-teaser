@@ -2,6 +2,7 @@ import React from 'react';
 import Styles from './subscribe-styles.scss'
 import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
+import Input from '@/presentation/components/input'
 
 const Login: React.FC = () => {
   return (
@@ -21,12 +22,8 @@ const Login: React.FC = () => {
             <form className={Styles.form} action="">
               <h4 className={Styles.title}>Inscreva-se e seja um alpha tester!</h4>
               <div className={Styles.fields}>
-                <div className={Styles.inputWrapper}>
-                  <input type="text" className={Styles.input} name="userName" placeholder="Nome" />
-                </div>
-                <div className={Styles.inputWrapper}>
-                  <input type="email" className={Styles.input} name="userEmail" placeholder="Email" />
-                </div>
+                <Input type="text" className={Styles.input} name="userName" placeholder="Nome" />
+                <Input type="email" className={Styles.input} name="userEmail" placeholder="Email" />
               </div>
               <button className={Styles.button} type="submit">Cadastrar</button>
             </form>
