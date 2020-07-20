@@ -1,0 +1,34 @@
+@import '../../styles/variables.scss';
+
+.button{
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 0;
+  color: $darkBlue;
+  background: $lightBlue;
+  font-weight: $bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover{
+    background: lighten($lightBlue, 20);
+  }
+
+  &.loading{
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      border-radius: 50%;
+      vertical-align: text-bottom;
+      border: solid 2px $darkBlue;
+      border-top-color: lighten($darkBlue, 70);
+      animation: spin infinite linear .8s;
+    }
+  }
+}
