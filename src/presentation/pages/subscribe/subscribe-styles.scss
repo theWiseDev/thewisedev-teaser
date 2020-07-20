@@ -2,7 +2,6 @@
 
 *{
   font-family: $font;
-  font-size: 16px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,7 +9,12 @@
 }
 
 body{
+  font-size: 16px;
   background-color: $darkBlue;
+
+  @media screen and (max-width: #{$screen-xs}px){
+    font-size: 14px;
+  }
 }
 
 .container{
@@ -52,7 +56,8 @@ body{
   .signature{
     font: 12px Arial;
     color: $lightBlue;
-    display: block;
+    display: table;
+    margin: 0 auto;
     transform: rotate(90deg)
   }
 }
@@ -66,8 +71,13 @@ body{
 }
 
 .contentRight{
-  width: calc(60% - 15px);
-  margin-right: 30px;
+  width: calc(60% - 50px);
+  margin-right: 100px;
+
+  @media screen and (max-width: $screen-md){
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .contentTitle{
@@ -82,7 +92,11 @@ body{
 }
 
 .illustration{
-  width: calc(40% - 15px);
+  width: calc(40% - 50px);
+
+  @media screen and (max-width: 960px){
+    display: none;
+  }
 
   img{
     max-width: 100%;
