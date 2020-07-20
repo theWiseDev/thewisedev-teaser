@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss'],
+    extensions: ['.ts', '.tsx', '.js', 'scss', 'svg'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -21,6 +21,17 @@ module.exports = {
       loader: 'ts-loader',
       exclude: /node_modules/
     }, {
+      test: /\.svg$/,
+      use: [
+        {
+          loader: 'svg-url-loader',
+          options: {
+            limit: 10000
+          }
+        }
+      ]
+    },
+    {
       test: /\.scss$/,
       use: [{
         loader: 'style-loader'

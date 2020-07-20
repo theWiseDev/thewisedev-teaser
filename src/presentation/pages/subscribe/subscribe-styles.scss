@@ -1,0 +1,171 @@
+$darkBlue: #1A1F33;
+$lightBlue: #2FD7E7;
+$white: #EDEEF1;
+$bold: 900;
+
+
+*{
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+
+body{
+  background-color: $darkBlue;
+}
+
+.container{
+  width: 80vw;
+  margin-left: 10vw;
+}
+
+input[type="text"],
+input[type="email"]{
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 0;
+  color: $darkBlue;
+  width: 100%;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+@keyframes spin {
+  from{
+    transfrom: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+.button{
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 0;
+  color: $darkBlue;
+  background: $lightBlue;
+  font-weight: $bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+
+  &.loading{
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      border-radius: 50%;
+      vertical-align: text-bottom;
+      border: solid 2px $darkBlue;
+      border-top-color: lighten($darkBlue, 70);
+      animation: spin infinite linear .8s;
+    }
+  }
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.header{
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.footer{
+  padding: 50px 0;
+  text-align: center;
+
+  .tagline{
+    font: 10px Arial;
+    color: $lightBlue;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .signature{
+    font: 12px Arial;
+    color: $lightBlue;
+    display: block;
+    transform: rotate(90deg)
+  }
+}
+
+.content{
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.contentRight{
+  width: calc(60% - 15px);
+  margin-right: 30px;
+}
+
+.contentTitle{
+  font-size: 2.5em;
+  color: $lightBlue;
+  margin: 0 0 30px;
+}
+
+.contentText{
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.illustration{
+  width: calc(40% - 15px);
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.form{
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .title{
+    color: $lightBlue;
+    margin: 0 0 20px;
+  }
+
+  .fields{
+    display: flex;
+    margin-bottom: 20px;
+
+
+    .inputWrapper{
+      width: calc(60% - 15px);
+
+      &:first-child{
+        width: calc(40% - 15px);
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .button{
+    float: right;
+  }
+}
+
+
+
+
