@@ -13,8 +13,13 @@
   cursor: pointer;
   transition: all .2s;
 
-  &:hover{
+  &:not(:disabled):hover{
     background: lighten($lightBlue, 20);
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+    opacity: 0.4;
   }
 
   &.loading{
