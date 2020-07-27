@@ -5,16 +5,10 @@ import wise from '@/presentation/assets/images/illustration.svg'
 import { Input, Button } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
 
-type StateProps = {
-  isLoading: boolean
-  errorMessage: string
-}
 
 const Subscribe: React.FC = () => {
-  const [state] = useState<StateProps>({
-    isLoading: false,
-    errorMessage: ''
-  })
+  const [loading, setLoading] = useState(false)
+  const [validated, setValidated] = useState(false)
 
   return (
     <div className={Styles.main}>
@@ -30,14 +24,14 @@ const Subscribe: React.FC = () => {
             <div className={Styles.contentText}>
               <p>Em breve uma nova plataforma para ampliar seus conhecimentos em desenvolvimento de software e web.</p>
             </div>
-            <Context.Provider value={state}>
+            <Context.Provider value={validated}>
               <form className={Styles.form} action="">
                 <h4 className={Styles.title}>Inscreva-se e seja um alpha tester!</h4>
                 <div className={Styles.fields}>
                   <Input type="text" className={Styles.input} name="userName" placeholder="Nome" />
                   <Input type="email" className={Styles.input} name="userEmail" placeholder="Email" />
                 </div>
-                <Button disabled className={Styles.submit} type="submit">Cadastrar</Button>
+                <Button disabled={!validated} className={Styles.submit} type="submit">Cadastrar</Button>
               </form>
             </Context.Provider>
           </div>
