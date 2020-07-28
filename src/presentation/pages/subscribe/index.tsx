@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Styles from './subscribe-styles.scss'
 import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
 import { Input, Button } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
+import Validation from '@/presentation/protocols/validation';
 
+type Props = {
+  validation: Validation
+}
 
-const Subscribe: React.FC = () => {
-  const [loading, setLoading] = useState(false)
-  const [validated, setValidated] = useState(false)
+const Subscribe: React.FC<Props> = ({ validation }: Props) => {
+  const [state, setState] = useState({
+    loading: false,
+    validated: false,
+    userEmail: '',
+    userName: ''
+  })
+
+  useEffect(() => {
+    validation.validate('userName', state.userName)
+  }, [state.userName])
+
+  useEffect(() => {
+    validation.validate('userEmail', state.userEmail)
+  }, [state.userEmail])
 
   return (
     <div className={Styles.main}>
@@ -24,14 +40,14 @@ const Subscribe: React.FC = () => {
             <div className={Styles.contentText}>
               <p>Em breve uma nova plataforma para ampliar seus conhecimentos em desenvolvimento de software e web.</p>
             </div>
-            <Context.Provider value={validated}>
+            <Context.Provider value={{ state, setState }}>
               <form className={Styles.form} action="">
                 <h4 className={Styles.title}>Inscreva-se e seja um alpha tester!</h4>
                 <div className={Styles.fields}>
-                  <Input type="text" className={Styles.input} name="userName" placeholder="Nome" />
-                  <Input type="email" className={Styles.input} name="userEmail" placeholder="Email" />
+                  <Input type="text" className={Styles.input} name="userName" value={state.userName} placeholder="Nome" />
+                  <Input type="email" className={Styles.input} name="userEmail" value={state.userEmail} placeholder="Email" />
                 </div>
-                <Button disabled={!validated} className={Styles.submit} type="submit">Cadastrar</Button>
+                <Button disabled={!state.validated} className={Styles.submit} type="submit">Cadastrar</Button>
               </form>
             </Context.Provider>
           </div>
