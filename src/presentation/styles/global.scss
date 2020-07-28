@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "variables";
 
 *{
   font-family: $font;
@@ -16,3 +16,6 @@ body{
     font-size: 14px;
   }
 }
+
+@import 'subscribe';
+@import 'components';

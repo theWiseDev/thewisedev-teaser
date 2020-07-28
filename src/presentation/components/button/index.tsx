@@ -1,5 +1,4 @@
 import React from 'react'
-import Styles from './styles.scss'
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   children: string;
@@ -8,7 +7,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 const Button: React.FC<Props> = ({ children, ...rest }) => {
   return (
 
-    <button {...rest} className={Styles.button}>{children}</button>
+    <button {...rest} className="button">{children}</button>
   );
 }
 
