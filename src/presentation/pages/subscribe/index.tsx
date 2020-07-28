@@ -4,7 +4,7 @@ import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
 import { Input, Button } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
-import Validation from '@/presentation/protocols/validation';
+import Validation from '@/presentation/protocols/validation'
 
 type Props = {
   validation: Validation
@@ -15,16 +15,18 @@ const Subscribe: React.FC<Props> = ({ validation }: Props) => {
     loading: false,
     validated: false,
     userEmail: '',
-    userName: ''
+    userEmailError: 'Campo Obrigatório',
+    userName: '',
+    userNameError: 'Campo Obrigatório'
   })
 
   useEffect(() => {
-    validation.validate('userName', state.userName)
-  }, [state.userName])
-
-  useEffect(() => {
-    validation.validate('userEmail', state.userEmail)
-  }, [state.userEmail])
+    setState({
+      ...state,
+      userEmailError: validation.validate('userEmail', state.userEmail),
+      userNameError: validation.validate('userName', state.userName)
+    })
+  }, [state.userName, state.userEmail])
 
   return (
     <div className={Styles.main}>
