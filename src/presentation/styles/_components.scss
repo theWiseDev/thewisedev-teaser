@@ -1,3 +1,17 @@
+input[type="text"],
+input[type="email"]{
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 0;
+  color: $darkBlue;
+  width: 100%;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+
 .button{
   padding: 8px 15px;
   border-radius: 5px;
