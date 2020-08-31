@@ -12,18 +12,18 @@ type Props = {
 const Subscribe: React.FC<Props> = ({ validation }: Props) => {
   const [state, setState] = useState({
     loading: false,
-    validated: false,
     userEmail: '',
-    userEmailError: 'Campo Obrigatório',
+    userEmailError: '',
     userName: '',
-    userNameError: 'Campo Obrigatório'
+    userNameError: '',
+    mainError: ''
   })
 
   useEffect(() => {
     setState({
       ...state,
-      // userEmailError: validation.validate('userEmail', state.userEmail),
-      // userNameError: validation.validate('userName', state.userName)
+      userEmailError: validation.validate('userEmail', state.userEmail),
+      userNameError: validation.validate('userName', state.userName)
     })
   }, [state.userName, state.userEmail])
 
@@ -48,7 +48,7 @@ const Subscribe: React.FC<Props> = ({ validation }: Props) => {
                   <Input type="text" className="input" name="userName" value={state.userName} placeholder="Nome" />
                   <Input type="email" className="input" name="userEmail" value={state.userEmail} placeholder="Email" />
                 </div>
-                <Button disabled={!state.validated} className="submit" type="submit">Cadastrar</Button>
+                <Button disabled={!!state.userEmailError || !!state.userNameError} className="submit" type="submit">Cadastrar</Button>
               </form>
             </Context.Provider>
           </div>
