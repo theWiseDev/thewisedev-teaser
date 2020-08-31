@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
-import { Input, Button } from '@/presentation/components'
+import { Input, Button, FormStatus } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
 import Validation from '@/presentation/protocols/validation'
 import { Subscribe } from '@/domain/usecases'
@@ -79,6 +79,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
                 >
                   Cadastrar
                 </Button>
+                <FormStatus />
               </form>
             </Context.Provider>
           </div>
