@@ -11,7 +11,7 @@ module.exports = {
     filename: 'js/bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss', 'svg'],
+    extensions: ['.ts', '.tsx', '.js', 'scss', 'svg', 'jpg', 'png'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -37,6 +37,14 @@ module.exports = {
       use: ExtractTextPlugin.extract({
         use: ['css-loader', 'sass-loader']
       })
+    },
+    {
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
     }]
   },
   devServer: {
