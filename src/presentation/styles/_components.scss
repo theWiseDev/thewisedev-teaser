@@ -54,3 +54,12 @@ input[type="email"]{
     }
   }
 }
+
+.successWrap{
+  width: 100%;
+  margin-top: 15px;
+
+  .successMessage{
+    color: $green
+  }
+}

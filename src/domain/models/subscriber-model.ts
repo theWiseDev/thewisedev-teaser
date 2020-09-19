@@ -1,3 +1,4 @@
 export type SubscriberModel = {
-  token: string
+  name: string
+  email: string
 }

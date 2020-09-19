@@ -8,5 +8,6 @@ export const mockSubscribe = (): SubscribeParams => ({
 })
 
 export const mockSubscriberModel = (): SubscriberModel => ({
-  token: faker.random.uuid(),
+  name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+  email: faker.internet.email(),
 })

@@ -19,6 +19,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
     userName: '',
     userNameError: '',
     mainError: '',
+    success: null
   })
 
   useEffect(() => {
@@ -32,7 +33,12 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
     setState({ ...state, loading: true })
-    await subscribe.subscribe({ name: state.userName, email: state.userEmail })
+    try{
+      const response = await subscribe.subscribe({ name: state.userName, email: state.userEmail })
+      setState({...state, loading: false, success: `Obrigado por se inscrever, ${response.name}`})
+    } catch(error){
+      console.log(error)
+    }
   }
 
   return (
