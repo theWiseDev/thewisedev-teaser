@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import {Send} from 'react-feather'
 import logo from '@/presentation/assets/images/logo.svg'
 import wise from '@/presentation/assets/images/illustration.svg'
 import { Input, Button, FormStatus } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
 import Validation from '@/presentation/protocols/validation'
 import { Subscribe } from '@/domain/usecases'
+import CleanArchitecture from './CleanArchitecture'
+import Team from './Team'
+import Footer from '@/presentation/components/footer'
 
 type Props = {
   validation: Validation
@@ -52,17 +56,19 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
         <div className="container">
           <div className="contentRight">
             <h2 className="contentTitle">
-              Uma nova abordagem sobre desenvolvimento
+              Estamos descobrindo maneiras novas e mais efetivas de formar desenvolvedores, formando-nos a nós mesmos e ajudando outros a fazerem o mesmo. 
             </h2>
             <div className="contentText">
-              <p>
-                Em breve uma nova plataforma para ampliar seus conhecimentos em
-                desenvolvimento de software e web.
-              </p>
+              <p>Os cursos superiores de computação ‘tradicionais’ frequentemente sofrem por focar muito em fundamentos e pouco em tecnologias novas. Por outro lado, os bootcamps e cursos técnicos frequentemente sofrem por focar muito em tecnologias novas e pouco em fundamentos. </p>
+              <p>Estamos divisando maneiras novas para formar desenvolvedores focando em princípios e práticas atemporais estando ao mesmo tempo em sincronia com as tecnologias de ponta utilizadas na indústria. O objetivo é formar desenvolvedores com uma verdadeira sabedoria dev!</p>
+              <p>A plataforma theWiseDev será desenvolvida utilizando esses princípios e práticas atemporais e contando com o auxílio de toda a comunidade dev. Uma plataforma desenvolvida por devs e para devs!</p>
             </div>
             <Context.Provider value={{ state, setState }}>
               <form className="form" onSubmit={handleSubmit}>
                 <h4 className="title">Inscreva-se e seja um alpha tester!</h4>
+                <div className="form-text">
+                  <p>Deixe seu e-mail para ser notificado e receba o nosso exclusivo <a>Poster Clean Architecture</a> em pdf.</p>
+                </div>
                 <div className="fields">
                   <Input
                     type="text"
@@ -83,7 +89,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
                   disabled={!!state.userEmailError || !!state.userNameError}
                   type="submit"
                 >
-                  Cadastrar
+                  Quero meu poster
                 </Button>
                 <FormStatus />
               </form>
@@ -94,12 +100,9 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
           </figure>
         </div>
       </div>
-      <footer className="footer">
-        <div className="container">
-          <span className="tagline">code wisely</span>
-          <span className="signature">{`</:{>`}</span>
-        </div>
-      </footer>
+      <CleanArchitecture />
+      <Team />
+      <Footer />
     </div>
   )
 }
