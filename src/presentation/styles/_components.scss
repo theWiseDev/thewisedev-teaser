@@ -1,3 +1,45 @@
+.header{
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 100px;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.logo{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.socialNav{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  a{
+    @include imgreplace;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+  }
+}
+
+.github-icon{
+  background-image: url(../assets/images/icon-github.svg);
+}
+
+.youtube-icon{
+  background-image: url(../assets/images/icon-youtube.svg);
+}
+
+.instagram-icon{
+  background-image: url(../assets/images/icon-instagram.svg);
+}
+
 input[type="text"],
 input[type="email"]{
   padding: 8px 15px;

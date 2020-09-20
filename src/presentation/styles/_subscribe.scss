@@ -35,11 +35,6 @@ body{
   justify-content: space-between;
 }
 
-.header{
-  padding: 30px 0;
-  margin-bottom: 40px;
-}
-
 .footer{
   padding: 50px 0;
   text-align: center;
@@ -87,19 +82,6 @@ body{
 .contentText{
   line-height: 1.5;
   margin-bottom: 30px;
-}
-
-.illustration{
-  width: calc(40% - 50px);
-
-  @media screen and (max-width: 960px){
-    display: none;
-  }
-
-  img{
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .form{
