@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import {Send} from 'react-feather'
-import logo from '@/presentation/assets/images/logo.svg'
-import wise from '@/presentation/assets/images/illustration.svg'
-import { Input, Button, FormStatus } from '@/presentation/components'
+import { Input, Button, FormStatus,Footer, Header } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
 import Validation from '@/presentation/protocols/validation'
 import { Subscribe } from '@/domain/usecases'
 import CleanArchitecture from './CleanArchitecture'
 import Team from './Team'
-import Footer from '@/presentation/components/footer'
 
 type Props = {
   validation: Validation
@@ -47,11 +43,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
 
   return (
     <div className="main">
-      <header className="header">
-        <div className="container">
-          <img className="logo" src={logo} alt="theWhiseDev" />
-        </div>
-      </header>
+      <Header />
       <div className="content">
         <div className="container">
           <div className="contentRight">
@@ -95,9 +87,6 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
               </form>
             </Context.Provider>
           </div>
-          <figure className="illustration">
-            <img src={wise} alt="the Wise in the beggining of a journey" />
-          </figure>
         </div>
       </div>
       <CleanArchitecture />
