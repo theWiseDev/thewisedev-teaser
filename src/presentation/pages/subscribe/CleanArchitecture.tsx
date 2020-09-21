@@ -5,7 +5,7 @@ const CleanArchitecture:React.FC = () => {
   return(
     <section className="cleanArchitecture">
       <figure className="cleanArchitecture-image">
-        <h2 className="cleanArchitec">Clean Architecture</h2>
+        <h2 className="cleanArchitecure-title">Clean Architecture</h2>
         <img src={CAImage} alt="Clean Architecture diagram"/>
       </figure>
       <div className="cleanArchitecture-content">

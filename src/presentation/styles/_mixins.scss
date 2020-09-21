@@ -5,3 +5,22 @@
   overflow: hidden;
   display: inline-block;
 }
+
+@mixin paragraph($color: $white){
+  font: 1em $font;
+  color: $color;
+
+  p{
+    margin-bottom: 20px;
+  }
+
+  p:last-child{
+    margin-bottom: 0;
+  }
+}
+
+@mixin title($color: $lightBlue){
+  font: $bold 1.8em $display;
+  color: $color;
+  margin: 0 0 30px;
+}
