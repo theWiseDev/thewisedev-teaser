@@ -6,6 +6,7 @@ import {
   Footer,
   Header,
 } from '@/presentation/components'
+import wise from '@/presentation/assets/images/illustration.svg';
 import Context from '@/presentation/contexts/form/form-context'
 import Validation from '@/presentation/protocols/validation'
 import { Subscribe } from '@/domain/usecases'
@@ -82,7 +83,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
               dev!
             </p>
             <p>
-              A plataforma theWiseDev será desenvolvida utilizando esses
+              A plataforma <strong>theWiseDev</strong> será desenvolvida utilizando esses
               princípios e práticas atemporais e contando com o auxílio de toda
               a comunidade dev. Uma plataforma desenvolvida por devs e para
               devs!
@@ -91,6 +92,9 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
         </div>
         <Context.Provider value={{ state, setState }}>
           <form className="subscribe-form" onSubmit={handleSubmit}>
+            <figure className="subscribe-illustration">
+              <img src={wise} alt="A wise man in the beggining of a journey" />
+            </figure>
             <h4 className="title">Inscreva-se e seja um alpha tester!</h4>
             <div className="form-text">
               <p>
@@ -125,6 +129,35 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
         </Context.Provider>
       </div>
       <CleanArchitecture />
+
+      <Context.Provider value={{ state, setState }}>
+          <form className="subscribe-secondaryForm" onSubmit={handleSubmit}>
+            <h4 className="title">Deixe seu e-mail e receba nosso conteúdo</h4>
+            <div className="fields">
+              <Input
+                type="text"
+                className="input"
+                name="userName"
+                value={state.userName}
+                placeholder="Nome"
+              />
+              <Input
+                type="email"
+                className="input"
+                name="userEmail"
+                value={state.userEmail}
+                placeholder="Email"
+              />
+            </div>
+            <Button
+              disabled={!!state.userEmailError || !!state.userNameError}
+              type="submit"
+            >
+              Cadastrar
+            </Button>
+            <FormStatus />
+          </form>
+        </Context.Provider>
       <Team />
       <Footer />
     </div>

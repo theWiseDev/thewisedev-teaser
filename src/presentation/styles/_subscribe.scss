@@ -62,10 +62,14 @@ body{
   @include paragraph;
   line-height: 1.5;
   margin-bottom: 30px;
+
+  strong{
+    color: $lightBlue;
+  }
 }
 
 .subscribe-form{
-  padding: 60px;
+  padding: 60px 0 60px 60px;
   grid-column-start: 3;
   grid-column-end: 4;
   display: flex;
@@ -95,6 +99,17 @@ body{
   .inputWrapper{
     margin-bottom: 10px;
     width: 100%;
+  }
+}
+
+.subscribe-illustration{
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+
+  img{
+    max-width: 350px;
+    height: auto;
   }
 }
 
@@ -138,6 +153,35 @@ body{
 
 .cleanArchitecure-title{
   @include title;
+}
+
+.subscribe-secondaryForm{
+  padding: 60px 0;
+  border-bottom: solid 1px rgba($white, .3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title{
+    color: $lightBlue;
+    margin: 0 0 20px;
+    width: 100%;
+    font: $bold 1.2em $display;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .fields{
+    max-width: 800px;
+    margin: 0 100px 20px;
+    display: flex;
+    justify-content: center;
+
+    .inputWrapper:nth-child(odd){
+      margin-right: 30px;
+    }
+  }
 }
 
 .teamList{
