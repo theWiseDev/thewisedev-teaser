@@ -20,7 +20,11 @@
 }
 
 @mixin title($color: $lightBlue){
-  font: $bold 1.8em $display;
+  font: $bold 1.5em $display;
   color: $color;
   margin: 0 0 30px;
+
+  @media screen and (min-width: #{$screen-lg}px){
+    font-size: 1.8em;
+  }
 }

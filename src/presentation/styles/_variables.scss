@@ -13,7 +13,11 @@ $font: 'Fira Code', sans-serif;
 $bold: 900;
 
 // Breakpoints
-$screen-lg: 1260;
-$screen-md: 960px;
+$screen-lg: 1200;
+$screen-md: 960;
 $screen-sm: 768;
 $screen-xs: 480;
+
+// Global variables
+$margin-horizontal: 30px;
+$margin-horizontal-lg: 200px;
