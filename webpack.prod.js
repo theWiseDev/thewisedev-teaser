@@ -1,21 +1,10 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const common = require('./webpack.common')
+const merge = require('webpack-merge')
 
-module.exports = {
-  mode: 'development',
-  entry: './src/main/index.tsx',
-  output: {
-    path: path.resolve(__dirname, 'public', 'dist'),
-    publicPath: '/public/dist',
-    filename: 'js/bundle.js'
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss', 'svg', 'jpg', 'png'],
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  },
+module.exports = merge(common, {
+  mode: 'production',
   module: {
     rules: [{
       test: /\.ts(x?)$/,
@@ -47,17 +36,14 @@ module.exports = {
       ],
     }]
   },
-  devServer: {
-    contentBase: './public',
-    writeToDisk: true,
-    historyApiFallback: true
-  },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new ExtractTextPlugin('css/styles.css'),
+    new HtmlWebpackPlugin({
+      template: 'template.prod.html'
+    })
   ]
-}
+})
