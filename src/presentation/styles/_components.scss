@@ -7,11 +7,21 @@
   @media screen and (min-width: #{$screen-lg}px){
     grid-template-columns: $margin-horizontal-lg 1fr 1fr $margin-horizontal-lg;
   }
+
+  @media screen and (max-width: #{$screen-sm}px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .logo{
   grid-column-start: 2;
   grid-column-end: 3;
+
+  @media screen and (max-width: #{$screen-sm}px){
+   margin-bottom: 30px;
+  }
 }
 
 .socialNav{
@@ -29,6 +39,10 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-left: 30px;
+
+    &:first-child{
+      margin-left: 0;
+    }
   }
 }
 
@@ -125,6 +139,12 @@ footer{
     grid-template-columns: $margin-horizontal-lg 1fr 1fr 1fr $margin-horizontal-lg;
   }
 
+  @media screen and (max-width: #{$screen-sm}px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .tagline{
     font: 10px Arial;
     color: $lightBlue;
@@ -149,6 +169,10 @@ footer{
   height: 50px;
   grid-column-start: 2;
   grid-column-end: 3;
+
+  @media screen and (max-width: #{$screen-sm}px){
+    margin-bottom: 20px;
+  }
 }
 
 .footer-tagline{
