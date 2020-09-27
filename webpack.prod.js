@@ -43,7 +43,8 @@ module.exports = merge(common, {
   plugins: [
     new ExtractTextPlugin('css/styles.css'),
     new HtmlWebpackPlugin({
-      template: 'template.prod.html'
+      template: 'template.prod.html',
+      favicon: './public/favicon.png'
     })
   ]
 })
