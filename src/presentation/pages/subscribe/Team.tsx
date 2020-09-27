@@ -1,6 +1,7 @@
 import React from 'react'
 import Otavio from '@/presentation/assets/images/Otavio-Lemos.jpg'
 import Bruno from '@/presentation/assets/images/Bruno-Scodeler.jpg'
+import Adriano from '@/presentation/assets/images/Adriano-Carvalho.jpg'
 
 const Team: React.FC = () => {
   return(
@@ -40,23 +41,24 @@ const Team: React.FC = () => {
             </div>
             <div className="team-memberBio">
               <p>Formado em Design pela ESPM-SP, Sócio do Maquinário - Laboratório Criativo, onde há 9 anos trabalha como UX/UI Designer e Desenvolvedor de Front-end.</p>
+              <p>Procura sintetizar as ideias e organizar as informações da melhor maneira possível, com experiências limpas, belas e intuitivas, combinando o design e a tecnologia corretas para cada projeto.</p>
             </div>
           </div>
         </li>
         <li className="team-member">
           <figure className="team-memberImage">
-            <img src={Bruno} alt="Bruno Scodeler"/>
+            <img src={Adriano} alt="Adriano Carvalho"/>
           </figure>
           <div className="team-memberAbout">
             <div className="team-memberTop">
-              <h3 className="team-memberName">Adriano</h3>
+              <h3 className="team-memberName">Adriano Carvalho</h3>
               <nav className="team-memberSocial">
                 <a href="https://github.com/" rel="noreferrer nofollow" target="_blank" className="github-icon">Github</a>
                 <a href="https://www.linkedin.com/" rel="noreferrer nofollow" target="_blank" className="linkedin-icon">Linkedin</a>
               </nav>
             </div>
             <div className="team-memberBio">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+              <p>Formado em Tecnologia em Processamento de Dados pela Universidade Católica de Brasília, mestre e doutorando em computação pela UNIFESP na área de Engenharia de Software. Apaixonado por desenvolvimento de software, tem larga experiência profissional em desenvolvimento para instituições públicas e privadas como: Tribunal Regional Federal, Banco Central do Brasil, Banco Votorantim e Editora Abril. Certificações Java: SCJP e SCWCD. Experiência didática em aulas e treinamentos.</p>
             </div>
           </div>
         </li>
