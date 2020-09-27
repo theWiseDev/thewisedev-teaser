@@ -31,7 +31,7 @@ body{
 .main{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: space-between;
 }
 
@@ -240,6 +240,21 @@ body{
 
     .inputWrapper:nth-child(odd){
       margin-right: 30px;
+    }
+
+    @media screen and (max-width: #{$screen-sm}px){
+      width: 100%;
+      flex-direction: column;
+      padding: 0 30px;
+      margin-bottom: 0;
+
+      .inputWrapper{
+        margin-bottom: 20px;
+      }
+
+      .inputWrapper:nth-child(odd){
+        margin-right: 0;
+      }
     }
   }
 }
