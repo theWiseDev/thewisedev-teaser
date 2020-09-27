@@ -334,6 +334,7 @@ body{
     width: 240px;
     height: 240px;
     border-radius: 50%;
+    object-fit: cover;
 
     @media screen and (max-width: #{$screen-sm}px){
       width: 160px;

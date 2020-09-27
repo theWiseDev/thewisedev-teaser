@@ -53,12 +53,13 @@ const Team: React.FC = () => {
             <div className="team-memberTop">
               <h3 className="team-memberName">Adriano Carvalho</h3>
               <nav className="team-memberSocial">
-                <a href="https://github.com/" rel="noreferrer nofollow" target="_blank" className="github-icon">Github</a>
-                <a href="https://www.linkedin.com/" rel="noreferrer nofollow" target="_blank" className="linkedin-icon">Linkedin</a>
+                <a href="https://github.com/adrianocarv" rel="noreferrer nofollow" target="_blank" className="github-icon">Github</a>
+                <a href="https://www.linkedin.com/in/adriano-carvalho-54691818" rel="noreferrer nofollow" target="_blank" className="linkedin-icon">Linkedin</a>
               </nav>
             </div>
             <div className="team-memberBio">
-              <p>Formado em Tecnologia em Processamento de Dados pela Universidade Católica de Brasília, mestre e doutorando em computação pela UNIFESP na área de Engenharia de Software. Apaixonado por desenvolvimento de software, tem larga experiência profissional em desenvolvimento para instituições públicas e privadas como: Tribunal Regional Federal, Banco Central do Brasil, Banco Votorantim e Editora Abril. Certificações Java: SCJP e SCWCD. Experiência didática em aulas e treinamentos.</p>
+              <p>Formado em Processamento de Dados pela Universidade Católica de Brasília (UCB), mestre e doutorando em computação pela Universidade Federal de São Paulo (UNIFESP) na área de Engenharia de Software. Apaixonado por desenvolvimento de software, tem larga experiência profissional em desenvolvimento para instituições públicas e privadas como: Tribunal Regional Federal, Banco Central do Brasil, Banco Votorantim e Editora Abril.</p>
+              <p>Atualmente é desenvolvedor autônomo, e busca um aprimoramento contínuo na arte de desenvolvimento de software.</p>
             </div>
           </div>
         </li>
