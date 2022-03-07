@@ -27,42 +27,6 @@ const Team: React.FC = () => {
             </div>
           </div>
         </li>
-        <li className="team-member">
-          <figure className="team-memberImage">
-            <img src={Bruno} alt="Bruno Scodeler"/>
-          </figure>
-          <div className="team-memberAbout">
-            <div className="team-memberTop">
-              <h3 className="team-memberName">Bruno Scodeler</h3>
-              <nav className="team-memberSocial">
-                <a href="https://github.com/scodeler" rel="noreferrer nofollow" target="_blank" className="github-icon">Github</a>
-                <a href="https://www.linkedin.com/in/bruno-scodeler/" rel="noreferrer nofollow" target="_blank" className="linkedin-icon">Linkedin</a>
-              </nav>
-            </div>
-            <div className="team-memberBio">
-              <p>Formado em Design pela ESPM-SP, Sócio do Maquinário - Laboratório Criativo, onde há 9 anos trabalha como UX/UI Designer e Desenvolvedor de Front-end.</p>
-              <p>Procura sintetizar as ideias e organizar as informações da melhor maneira possível, com experiências limpas, belas e intuitivas, combinando o design e a tecnologia corretas para cada projeto.</p>
-            </div>
-          </div>
-        </li>
-        <li className="team-member">
-          <figure className="team-memberImage">
-            <img src={Adriano} alt="Adriano Carvalho"/>
-          </figure>
-          <div className="team-memberAbout">
-            <div className="team-memberTop">
-              <h3 className="team-memberName">Adriano Carvalho</h3>
-              <nav className="team-memberSocial">
-                <a href="https://github.com/adrianocarv" rel="noreferrer nofollow" target="_blank" className="github-icon">Github</a>
-                <a href="https://www.linkedin.com/in/adriano-carvalho-54691818" rel="noreferrer nofollow" target="_blank" className="linkedin-icon">Linkedin</a>
-              </nav>
-            </div>
-            <div className="team-memberBio">
-              <p>Formado em Processamento de Dados pela Universidade Católica de Brasília (UCB), mestre e doutorando em computação pela Universidade Federal de São Paulo (UNIFESP) na área de Engenharia de Software. Apaixonado por desenvolvimento de software, tem larga experiência profissional em desenvolvimento para instituições públicas e privadas como: Tribunal Regional Federal, Banco Central do Brasil, Banco Votorantim e Editora Abril.</p>
-              <p>Atualmente é desenvolvedor autônomo, e busca um aprimoramento contínuo na arte de desenvolvimento de software.</p>
-            </div>
-          </div>
-        </li>
       </ul>
     </section>
   )
