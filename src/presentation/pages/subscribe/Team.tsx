@@ -1,7 +1,5 @@
 import React from 'react'
 import Otavio from '@/presentation/assets/images/Otavio-Lemos.jpg'
-import Bruno from '@/presentation/assets/images/Bruno-Scodeler.jpg'
-import Adriano from '@/presentation/assets/images/Adriano-Carvalho.jpg'
 
 const Team: React.FC = () => {
   return(

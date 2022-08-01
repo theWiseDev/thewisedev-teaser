@@ -11,6 +11,7 @@ import Context from '@/presentation/contexts/form/form-context'
 import Validation from '@/presentation/protocols/validation'
 import { Subscribe } from '@/domain/usecases'
 import CleanArchitecture from './CleanArchitecture'
+import WorkshopContact from './WorkshopContact'
 import Team from './Team'
 
 type Props = {
@@ -64,7 +65,7 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
         <div className="subscribe-content">
           <h2 className="subscribe-title">
             Estamos descobrindo maneiras novas e mais efetivas de formar
-            desenvolvedores, formando-nos a nós mesmos e ajudando outros a
+            desenvolvedores, formando-nos nós mesmos e ajudando outros a
             fazerem o mesmo. 
           </h2>
           <div className="content-text">
@@ -131,33 +132,34 @@ const Subscribe: React.FC<Props> = ({ validation, subscribe }: Props) => {
       <CleanArchitecture />
 
       <Context.Provider value={{ state, setState }}>
-          <form className="subscribe-secondaryForm" onSubmit={handleSubmit}>
-            <h4 className="title">Deixe seu e-mail e receba nosso conteúdo</h4>
-            <div className="fields">
-              <Input
-                type="text"
-                className="input"
-                name="userName"
-                value={state.userName}
-                placeholder="Nome"
-              />
-              <Input
-                type="email"
-                className="input"
-                name="userEmail"
-                value={state.userEmail}
-                placeholder="Email"
-              />
-            </div>
-            <Button
-              disabled={!!state.userEmailError || !!state.userNameError}
-              type="submit"
-            >
-              Cadastrar
-            </Button>
-            <FormStatus />
-          </form>
-        </Context.Provider>
+        <form className="subscribe-secondaryForm" onSubmit={handleSubmit}>
+          <h4 className="title">Deixe seu e-mail e receba nosso conteúdo</h4>
+          <div className="fields">
+            <Input
+              type="text"
+              className="input"
+              name="userName"
+              value={state.userName}
+              placeholder="Nome"
+            />
+            <Input
+              type="email"
+              className="input"
+              name="userEmail"
+              value={state.userEmail}
+              placeholder="Email"
+            />
+          </div>
+          <Button
+            disabled={!!state.userEmailError || !!state.userNameError}
+            type="submit"
+          >
+            Cadastrar
+          </Button>
+          <FormStatus />
+        </form>
+      </Context.Provider>
+      <WorkshopContact />
       <Team />
       <Footer />
     </div>
