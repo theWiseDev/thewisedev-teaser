@@ -31,6 +31,9 @@ const WorkshopContact: React.FC = () => {
               <img src={RedventuresLogo} alt="Redventures logo"/>
             </figure>
             <figure>
+              <img src={RethinkLogo} alt="Rethink logo"/>
+            </figure>
+            <figure>
               <img src={HelpperLogo} alt="Helpper Logo"/>
             </figure>
             <figure>
