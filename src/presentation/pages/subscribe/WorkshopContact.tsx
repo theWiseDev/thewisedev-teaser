@@ -6,6 +6,7 @@ import RethinkLogo from '@/presentation/assets/images/rethink-logo.png'
 import HelpperLogo from '@/presentation/assets/images/helpper-logo.png'
 import SomaLogo from '@/presentation/assets/images/soma-logo.png'
 import TrioLogo from '@/presentation/assets/images/trio-logo.png'
+import RioEnergyLogo from '@/presentation/assets/images/rio-energy-logo.png'
 
 const WorkshopContact: React.FC = () => {
   return(
@@ -32,6 +33,9 @@ const WorkshopContact: React.FC = () => {
             </figure>
             <figure>
               <img src={RethinkLogo} alt="Rethink logo"/>
+            </figure>
+            <figure>
+              <img src={RioEnergyLogo} alt="Rio Energy logo"/>
             </figure>
             <figure>
               <img src={HelpperLogo} alt="Helpper Logo"/>
