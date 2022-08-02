@@ -399,39 +399,17 @@ body{
 }
 
 .workshopContact-list {
-  padding: 60px;
+  padding: 60px 200px;
   list-style: none;
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  display: grid;
-  grid-template-columns: $margin-horizontal 1fr 50px 1fr $margin-horizontal;
   border-bottom: solid 1px rgba($white, .3);
 
-  @media screen and (min-width: #{$screen-lg}px){
-    grid-template-columns: $margin-horizontal-lg 2fr 50px 1fr $margin-horizontal-lg;
-  }
-
-  @media screen and (max-width: #{$screen-sm}px){
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: #{$screen-lg}px){
     padding: 30px;
   }
 
-  .workshopContact-companies{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    margin-bottom: 0;
-
-    @media screen and (max-width: #{$screen-sm}px){
-      margin-bottom: 30px;
-    }
-  }
-
-  .workshopContact-memberBio{
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
 }
 
 .workshopContact-memberBio{
@@ -442,13 +420,10 @@ body{
     text-decoration: none;
   }
 
-  @media screen and (max-width: #{$screen-sm}px){
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
 }
 
 .workshopContact-companies > figure{
-  margin-bottom: 30px;
   display: flex;
   align-items: center;
 
@@ -463,10 +438,27 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
+  row-gap: 30px;
   height: fit-content;
   justify-items: center;
 
   @media screen and (min-width: #{$screen-xs}px) and (max-width: #{$screen-sm}px){
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (min-width: #{$screen-lg}px){
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  @media screen and (min-width: #{$screen-md}px) and (max-width: #{$screen-lg}px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: #{$screen-sm}px) and (max-width: #{$screen-md}px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: #{$screen-sm}px){
+    grid-template-columns: repeat(2, 1fr);
   }
 }
